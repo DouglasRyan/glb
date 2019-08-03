@@ -1,0 +1,65 @@
+body {
+    width: 360px;
+    margin: 0 auto; }
+
+.rl {
+    width: 360px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
+.rl .control {
+    line-height: 50px;
+    color: #FCFCFC;
+    background: #333333;
+    flex-basis: 100%;
+    text-align: center; }
+.rl .control .today {
+    float: right;
+    padding-right: 15px; }
+
+.calendarBody {
+    width: 360px; }
+.calendarBody table th {
+    line-height: 40px;
+    color: #C6C6C6; }
+.calendarBody table td {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #373737; }
+
+.options {
+    border-top: 1px solid #E9E9E9;
+    border-bottom: 1px solid #E9E9E9;
+    width: 360px;
+    heigth: 45px;
+    line-height: 45px;
+    color: #6C6C6C;
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: 0px 1px 1px #E9E9E9; }
+
+.current {
+    background: #2A579A;
+    border-radius: 50%; }
+
+.optioned {
+    color: #2A579A;
+    font-weight: bold; }
+
+td.selected {
+    border: 1px solid #2A579A;
+    border-radius: 50%; }
+
+.upBtn,
+.dropBtn {
+    display: none;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    padding: 0 170px 15px 170px; }
+
+.upBtn.active,
+.dropBtn.active {
+    display: block; }
