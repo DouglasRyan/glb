@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c91bd812-299b-4d91-9f57-53210ee10c05" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-    </list>
+    <list default="true" id="c91bd812-299b-4d91-9f57-53210ee10c05" name="默认更改列表" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -27,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="308" lean-forward="true" selection-start-line="308" selection-end-line="308" />
+            <state relative-caret-position="4672">
+              <caret line="292" column="21" selection-end-line="308" />
             </state>
           </provider>
         </entry>
@@ -139,12 +137,12 @@
       <option name="presentableId" value="Default" />
       <updated>1564654564245</updated>
       <workItem from="1564654565469" duration="7952000" />
-      <workItem from="1564788307236" duration="3457000" />
+      <workItem from="1564788307236" duration="3529000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11409000" />
+    <option name="totallyTimeSpent" value="11481000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
@@ -240,8 +238,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="308" lean-forward="true" selection-start-line="308" selection-end-line="308" />
+        <state relative-caret-position="4672">
+          <caret line="292" column="21" selection-end-line="308" />
         </state>
       </provider>
     </entry>
