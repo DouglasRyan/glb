@@ -234,8 +234,6 @@ function setWeekDate() {
         if (td.innerText===a){
             let year = currentDate.getFullYear();
             let month = currentDate.getMonth();
-            console.log(year,now.getFullYear())
-            console.log(year===now.getFullYear())
             if (year === now.getFullYear() && month ===now.getMonth()){
                 td.className = 'current'
             }
