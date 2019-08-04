@@ -1,5 +1,5 @@
 let rl = document.getElementById('calendarBody')
-let table =document.createElement('table')
+let table = document.createElement('table')
 let tds = document.getElementsByTagName('td')
 rl.appendChild(table)
 let isFold = false
@@ -16,48 +16,48 @@ initDate()
 
 //移动端事件监听
 table.addEventListener('touchstart', enter)
-function enter(e){
+function enter(e) {
     e.preventDefault()
     let x = e.changedTouches[0].screenX
     let y = e.changedTouches[0].screenY
-    coor[0] = [x,y]
+    coor[0] = [x, y]
 }
 table.addEventListener('touchmove', move)
-function move(e){
+function move(e) {
     e.preventDefault()
     let x = e.changedTouches[0].screenX
     let y = e.changedTouches[0].screenY
-    coor[1] = [x,y]
+    coor[1] = [x, y]
     //上下滑动
-    if((coor[1][1]-coor[0][1])>30){
+    if ((coor[1][1] - coor[0][1]) > 30) {
         down()
-    }else if ((coor[1][1]-coor[0][1])<-30){
+    } else if ((coor[1][1] - coor[0][1]) < -30) {
         up()
     }
     //左右滑动
-    if((coor[1][0]-coor[0][0])>30){
+    if ((coor[1][0] - coor[0][0]) > 30) {
         left()
-    }else if ((coor[1][0]-coor[0][0])<-30){
+    } else if ((coor[1][0] - coor[0][0]) < -30) {
         right()
     }
 }
 table.addEventListener('touchend', end)
-function end(e){
+function end(e) {
     e.preventDefault()
     let x = e.changedTouches[0].screenX
     let y = e.changedTouches[0].screenY
-    coor[1] = [x,y]
+    coor[1] = [x, y]
     //点击变色
-    if (coor[0][0]===coor[1][0] && coor[1][1]===coor[0][1]){
+    if (coor[0][0] === coor[1][0] && coor[1][1] === coor[0][1]) {
         let tar = e.changedTouches[0].target
         if (tar.tagName === "TD") {
-            if (tar.innerText!==""){
-                for(let i = 0;i<table.children.length;i++){
-                    for(let j = 0;j<table.children[i].children.length;j++){
-                        if(table.children[i].children[j]===tar){
+            if (tar.innerText !== "") {
+                for (let i = 0; i < table.children.length; i++) {
+                    for (let j = 0; j < table.children[i].children.length; j++) {
+                        if (table.children[i].children[j] === tar) {
                             tar.className = "selected"
                             currentDate.setDate(tar.innerText)
-                        }else{
+                        } else {
                             table.children[i].children[j].className = ""
                         }
                     }
@@ -70,8 +70,8 @@ function end(e){
 }
 //事件监听
 //上拉折叠
-function up(){
-    isFold=true;
+function up() {
+    isFold = true;
     dropBtn.className = "dropBtn active"
     upBtn.className = "upBtn"
     initWeekDate()
@@ -81,8 +81,8 @@ function up(){
 //     initWeekDate()
 // }
 //下拉展开
-function down(){
-    isFold=false;
+function down() {
+    isFold = false;
     dropBtn.className = "dropBtn"
     upBtn.className = "upBtn active"
     initMonthDate()
@@ -92,12 +92,12 @@ function down(){
 //     initMonthDate()
 // }
 //左滑动
-function left(){
-    if (isFold===true){
+function left() {
+    if (isFold === true) {
         setPreCurrentDate();
         text.innerText = currentDate.toLocaleDateString();
         initWeekDate();
-    } else{
+    } else {
         let month = currentDate.getMonth();
         month = month - 1;
         let year = currentDate.getFullYear();
@@ -121,12 +121,12 @@ function left(){
 //     }
 // }
 //右滑动
-function right(){
-    if (isFold===true) {
+function right() {
+    if (isFold === true) {
         setNextCurrentDate();
         text.innerText = currentDate.toLocaleDateString();
         initWeekDate()
-    }else{
+    } else {
         let month = currentDate.getMonth();
         month = month + 1
         let year = currentDate.getFullYear();
@@ -150,16 +150,19 @@ function right(){
 //     }
 // }
 //点击变色
-options.onclick = (e)=>{
+options.onclick = (e) => {
     e.preventDefault()
-    let children = e.target.parentElement.children
-    for (let i = 0;i<children.length;i++){
-        if(children[i]===e.target){
-            children[i].className = "optioned"
-        }else{
-            children[i].className=""
+    if (e.target.tagName === "SPAN") {
+        let children = e.target.parentElement.children
+        for (let i = 0; i < children.length; i++) {
+            if (children[i] === e.target) {
+                children[i].className = "optioned"
+            } else {
+                children[i].className = ""
+            }
         }
     }
+
 }
 // //table点击变色
 // table.onclick = (e)=>{
@@ -180,7 +183,7 @@ options.onclick = (e)=>{
 //     initDate()
 // }
 //点击今天到达今天
-toToday.onclick = (e)=>{
+toToday.onclick = (e) => {
     e.preventDefault()
     currentDate = new Date()
     initDate()
@@ -188,22 +191,22 @@ toToday.onclick = (e)=>{
 
 
 //初始化函数
-function initDate(){
-    if (isFold===true){
+function initDate() {
+    if (isFold === true) {
         initWeekDate()
-    } else{
+    } else {
         initMonthDate()
     }
 }
-function initWeekDate(){
-    table.innerHTML='';
+function initWeekDate() {
+    table.innerHTML = '';
     text.innerText = currentDate.toLocaleDateString();
     baseDate();
     setWeekDate();
 }
 function initMonthDate() {
     text.innerText = currentDate.toLocaleDateString();
-    table.innerHTML='';
+    table.innerHTML = '';
     baseDate();
     setMonthDate();
 }
@@ -227,14 +230,14 @@ function setWeekDate() {
     for (let i = 0; i < 7; i++) {
         let td = document.createElement('td')
         td.innerText = days[i].getDate();
-        if (i === day){
+        if (i === day) {
             td.className += 'selected'
         }
         let a = now.getDate().toString()
-        if (td.innerText===a){
+        if (td.innerText === a) {
             let year = currentDate.getFullYear();
             let month = currentDate.getMonth();
-            if (year === now.getFullYear() && month ===now.getMonth()){
+            if (year === now.getFullYear() && month === now.getMonth()) {
                 td.className = 'current'
             }
         }
@@ -257,15 +260,15 @@ function setNextCurrentDate() {
 function getDays(date) {
     let days = new Array();
     for (let i = 1; i <= 7; i++) {
-        days[i - 1] = getInWeek(date,i);
+        days[i - 1] = getInWeek(date, i);
     }
     return days;
 }
 //取得当前日期一周内的某一天
-function getInWeek(date,i) {
+function getInWeek(date, i) {
     let n = date.getDay(); //今天星期几
     let start = new Date();
-    start.setDate(date.getDate() - n + i -1); //一周内的第i天
+    start.setDate(date.getDate() - n + i - 1); //一周内的第i天
     return start;
 }
 
@@ -295,7 +298,7 @@ function setMonthDate() {
             td.innerText = current;
             if (current === day) {
                 td.className += "selected"
-                if (today == currentDate.toDateString()){
+                if (today == currentDate.toDateString()) {
                     td.className += " current"
                 }
             }
